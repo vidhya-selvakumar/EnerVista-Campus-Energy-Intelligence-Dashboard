@@ -1,0 +1,904 @@
+/* ============================================================
+   EnerVista
+   Enterprise Energy Intelligence Dashboard
+   Global Stylesheet
+   ============================================================ */
+
+/* ---------- Global ---------- */
+
+:root {
+    --ev-primary: #2563eb;
+    --ev-primary-dark: #1d4ed8;
+    --ev-secondary: #0f172a;
+    --ev-accent: #06b6d4;
+
+    --ev-success: #16a34a;
+    --ev-warning: #d97706;
+    --ev-danger: #dc2626;
+
+    --ev-bg: #f8fafc;
+    --ev-surface: #ffffff;
+    --ev-surface-soft: #f1f5f9;
+
+    --ev-border: #e2e8f0;
+    --ev-border-light: #eef2f7;
+
+    --ev-text: #0f172a;
+    --ev-text-secondary: #475569;
+    --ev-text-muted: #64748b;
+
+    --ev-radius: 14px;
+    --ev-radius-small: 10px;
+
+    --ev-shadow:
+        0 4px 16px rgba(15, 23, 42, 0.06);
+
+    --ev-shadow-hover:
+        0 10px 28px rgba(15, 23, 42, 0.10);
+}
+
+
+/* ---------- Streamlit Main Page ---------- */
+
+.stApp {
+    background: var(--ev-bg);
+    color: var(--ev-text);
+}
+
+.main {
+    background: var(--ev-bg);
+}
+
+.block-container {
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+    max-width: 1500px;
+}
+
+
+/* ---------- Sidebar ---------- */
+
+section[data-testid="stSidebar"] {
+    background:
+        linear-gradient(
+            180deg,
+            #0f172a 0%,
+            #111827 55%,
+            #172033 100%
+        );
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+section[data-testid="stSidebar"] > div {
+    background: transparent;
+}
+
+section[data-testid="stSidebar"] * {
+    color: #e5e7eb;
+}
+
+section[data-testid="stSidebar"] label {
+    color: #cbd5e1 !important;
+    font-weight: 500;
+}
+
+section[data-testid="stSidebar"] .stCaption {
+    color: #94a3b8 !important;
+}
+
+
+/* ---------- Sidebar Inputs ---------- */
+
+section[data-testid="stSidebar"] input,
+section[data-testid="stSidebar"] textarea {
+    background: #1e293b !important;
+    color: #f8fafc !important;
+    border: 1px solid #334155 !important;
+}
+
+section[data-testid="stSidebar"] [data-baseweb="select"] > div {
+    background: #1e293b !important;
+    border-color: #334155 !important;
+    color: #f8fafc !important;
+}
+
+section[data-testid="stSidebar"] [data-baseweb="select"] span {
+    color: #f8fafc !important;
+}
+
+section[data-testid="stSidebar"] [data-baseweb="select"] svg {
+    fill: #cbd5e1 !important;
+}
+
+
+/* ---------- Sidebar Navigation ---------- */
+
+section[data-testid="stSidebar"] .stPageLink {
+    border-radius: 10px;
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+section[data-testid="stSidebar"] .stPageLink:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateX(2px);
+}
+
+
+/* ---------- Typography ---------- */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--ev-text);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+h1 {
+    font-size: 2.15rem;
+    line-height: 1.2;
+}
+
+h2 {
+    font-size: 1.55rem;
+}
+
+h3 {
+    font-size: 1.25rem;
+}
+
+p,
+li {
+    color: var(--ev-text-secondary);
+    line-height: 1.65;
+}
+
+small {
+    color: var(--ev-text-muted);
+}
+
+
+/* ---------- Brand ---------- */
+
+.ev-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.ev-brand-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(37, 99, 235, 0.18);
+    border: 1px solid rgba(96, 165, 250, 0.25);
+
+    font-size: 21px;
+    font-weight: 700;
+}
+
+.ev-brand-name {
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1.1;
+}
+
+.ev-brand-subtitle {
+    margin-top: 3px;
+    font-size: 0.72rem;
+    color: #94a3b8;
+    letter-spacing: 0.04em;
+}
+
+
+/* ---------- Page Header ---------- */
+
+.ev-page-header {
+    margin-bottom: 24px;
+}
+
+.ev-page-title {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--ev-text);
+}
+
+.ev-page-subtitle {
+    margin-top: 6px;
+    color: var(--ev-text-muted);
+    font-size: 0.95rem;
+}
+
+
+/* ---------- Hero Section ---------- */
+
+.ev-hero {
+    padding: 30px 32px;
+    margin-bottom: 24px;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0f172a 0%,
+            #172554 50%,
+            #0f766e 100%
+        );
+
+    box-shadow:
+        0 12px 32px rgba(15, 23, 42, 0.14);
+
+    position: relative;
+    overflow: hidden;
+}
+
+.ev-hero::after {
+    content: "";
+    position: absolute;
+
+    width: 220px;
+    height: 220px;
+
+    right: -80px;
+    top: -100px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.ev-hero-title {
+    position: relative;
+    z-index: 1;
+
+    color: #ffffff;
+    font-size: 2rem;
+    font-weight: 800;
+
+    margin: 0 0 8px 0;
+}
+
+.ev-hero-text {
+    position: relative;
+    z-index: 1;
+
+    max-width: 760px;
+
+    color: #cbd5e1;
+    font-size: 0.98rem;
+    line-height: 1.65;
+
+    margin: 0;
+}
+
+
+/* ---------- Section Header ---------- */
+
+.ev-section {
+    margin-top: 28px;
+    margin-bottom: 14px;
+}
+
+.ev-section-title {
+    margin: 0;
+
+    font-size: 1.2rem;
+    font-weight: 750;
+
+    color: var(--ev-text);
+}
+
+.ev-section-subtitle {
+    margin-top: 3px;
+
+    color: var(--ev-text-muted);
+    font-size: 0.82rem;
+}
+
+
+/* ---------- KPI Cards ---------- */
+
+.ev-kpi-card {
+    background: var(--ev-surface);
+
+    border: 1px solid var(--ev-border);
+    border-radius: var(--ev-radius);
+
+    padding: 20px;
+
+    min-height: 125px;
+
+    box-shadow: var(--ev-shadow);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.ev-kpi-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--ev-shadow-hover);
+    border-color: #cbd5e1;
+}
+
+.ev-kpi-label {
+    color: var(--ev-text-muted);
+
+    font-size: 0.78rem;
+    font-weight: 650;
+
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+
+    margin-bottom: 8px;
+}
+
+.ev-kpi-value {
+    color: var(--ev-text);
+
+    font-size: 1.65rem;
+    font-weight: 800;
+
+    line-height: 1.15;
+}
+
+.ev-kpi-description {
+    color: var(--ev-text-muted);
+
+    font-size: 0.76rem;
+
+    margin-top: 7px;
+}
+
+
+/* ---------- KPI Variants ---------- */
+
+.ev-kpi-success {
+    border-left: 4px solid var(--ev-success);
+}
+
+.ev-kpi-warning {
+    border-left: 4px solid var(--ev-warning);
+}
+
+.ev-kpi-danger {
+    border-left: 4px solid var(--ev-danger);
+}
+
+.ev-kpi-primary {
+    border-left: 4px solid var(--ev-primary);
+}
+
+
+/* ---------- Metric Cards ---------- */
+
+.ev-metric-card {
+    background: var(--ev-surface);
+
+    border: 1px solid var(--ev-border);
+    border-radius: var(--ev-radius-small);
+
+    padding: 16px 18px;
+
+    box-shadow: 0 2px 10px rgba(15, 23, 42, 0.04);
+}
+
+.ev-metric-title {
+    color: var(--ev-text-muted);
+
+    font-size: 0.78rem;
+    font-weight: 600;
+}
+
+.ev-metric-value {
+    margin-top: 5px;
+
+    color: var(--ev-text);
+
+    font-size: 1.35rem;
+    font-weight: 750;
+}
+
+
+/* ---------- Module Cards ---------- */
+
+.ev-module-card {
+    background: var(--ev-surface);
+
+    border: 1px solid var(--ev-border);
+    border-radius: 14px;
+
+    padding: 20px;
+
+    height: 100%;
+
+    box-shadow: var(--ev-shadow);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.ev-module-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--ev-shadow-hover);
+}
+
+.ev-module-icon {
+    width: 44px;
+    height: 44px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background: var(--ev-surface-soft);
+
+    margin-bottom: 13px;
+
+    font-size: 20px;
+}
+
+.ev-module-title {
+    font-size: 1rem;
+    font-weight: 700;
+
+    color: var(--ev-text);
+
+    margin-bottom: 5px;
+}
+
+.ev-module-description {
+    font-size: 0.82rem;
+    color: var(--ev-text-muted);
+
+    line-height: 1.55;
+}
+
+
+/* ---------- Status Badges ---------- */
+
+.ev-badge {
+    display: inline-flex;
+    align-items: center;
+
+    padding: 4px 9px;
+
+    border-radius: 999px;
+
+    font-size: 0.72rem;
+    font-weight: 650;
+}
+
+.ev-badge-success {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.ev-badge-warning {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.ev-badge-danger {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.ev-badge-info {
+    background: #dbeafe;
+    color: #1e40af;
+}
+
+
+/* ---------- Filter Summary ---------- */
+
+.ev-filter-summary {
+    background: #eff6ff;
+
+    border: 1px solid #dbeafe;
+
+    border-radius: 10px;
+
+    padding: 11px 14px;
+
+    margin: 8px 0 18px 0;
+
+    color: #1e40af;
+
+    font-size: 0.8rem;
+}
+
+
+/* ---------- Insight Cards ---------- */
+
+.ev-insight-card {
+    background: var(--ev-surface);
+
+    border: 1px solid var(--ev-border);
+
+    border-radius: var(--ev-radius-small);
+
+    padding: 17px 18px;
+
+    margin-bottom: 12px;
+
+    box-shadow: 0 2px 9px rgba(15, 23, 42, 0.04);
+}
+
+.ev-insight-title {
+    color: var(--ev-text);
+
+    font-size: 0.92rem;
+    font-weight: 700;
+
+    margin-bottom: 5px;
+}
+
+.ev-insight-text {
+    color: var(--ev-text-secondary);
+
+    font-size: 0.82rem;
+    line-height: 1.6;
+}
+
+
+/* ---------- Recommendation Cards ---------- */
+
+.ev-recommendation {
+    background: #f8fafc;
+
+    border: 1px solid var(--ev-border);
+
+    border-radius: 12px;
+
+    padding: 15px 17px;
+
+    margin-bottom: 10px;
+}
+
+.ev-recommendation-title {
+    font-weight: 700;
+    color: var(--ev-text);
+
+    font-size: 0.88rem;
+}
+
+.ev-recommendation-text {
+    margin-top: 4px;
+
+    color: var(--ev-text-secondary);
+
+    font-size: 0.8rem;
+    line-height: 1.55;
+}
+
+
+/* ---------- Streamlit Metrics ---------- */
+
+div[data-testid="stMetric"] {
+    background: var(--ev-surface);
+
+    border: 1px solid var(--ev-border);
+
+    border-radius: var(--ev-radius-small);
+
+    padding: 16px 18px;
+
+    box-shadow: var(--ev-shadow);
+}
+
+div[data-testid="stMetricLabel"] {
+    color: var(--ev-text-muted) !important;
+    font-weight: 600 !important;
+}
+
+div[data-testid="stMetricValue"] {
+    color: var(--ev-text) !important;
+    font-weight: 800 !important;
+}
+
+
+/* ---------- Buttons ---------- */
+
+.stButton > button {
+    border-radius: 9px;
+
+    border: 1px solid var(--ev-border);
+
+    font-weight: 650;
+
+    transition:
+        transform 0.15s ease,
+        box-shadow 0.15s ease,
+        background 0.15s ease;
+}
+
+.stButton > button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+}
+
+
+/* ---------- Download Buttons ---------- */
+
+.stDownloadButton > button {
+    width: 100%;
+
+    border-radius: 9px;
+
+    border: 1px solid var(--ev-border);
+
+    font-weight: 650;
+}
+
+
+/* ---------- Tabs ---------- */
+
+.stTabs [data-baseweb="tab-list"] {
+    gap: 4px;
+
+    border-bottom: 1px solid var(--ev-border);
+}
+
+.stTabs [data-baseweb="tab"] {
+    padding: 10px 15px;
+
+    color: var(--ev-text-muted);
+
+    font-weight: 600;
+}
+
+.stTabs [aria-selected="true"] {
+    color: var(--ev-primary) !important;
+}
+
+
+/* ---------- Input Controls ---------- */
+
+div[data-baseweb="select"] > div,
+div[data-baseweb="input"] > div {
+    border-radius: 8px;
+}
+
+input,
+textarea {
+    border-radius: 8px !important;
+}
+
+
+/* ---------- Expanders ---------- */
+
+.streamlit-expanderHeader {
+    font-weight: 650;
+
+    color: var(--ev-text);
+
+    border-radius: 9px;
+}
+
+div[data-testid="stExpander"] {
+    border: 1px solid var(--ev-border);
+    border-radius: 10px;
+}
+
+
+/* ---------- Alerts ---------- */
+
+div[data-testid="stAlert"] {
+    border-radius: 10px;
+}
+
+
+/* ---------- Dataframes ---------- */
+
+div[data-testid="stDataFrame"] {
+    border: 1px solid var(--ev-border);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+
+/* ---------- Plotly Charts ---------- */
+
+.js-plotly-plot {
+    border-radius: 12px;
+}
+
+div[data-testid="stPlotlyChart"] {
+    background: var(--ev-surface);
+
+    border: 1px solid var(--ev-border);
+
+    border-radius: 12px;
+
+    padding: 6px;
+
+    box-shadow: 0 2px 10px rgba(15, 23, 42, 0.04);
+}
+
+
+/* ---------- Horizontal Divider ---------- */
+
+hr {
+    border: 0;
+
+    border-top: 1px solid var(--ev-border);
+
+    margin: 24px 0;
+}
+
+
+/* ---------- Footer ---------- */
+
+.ev-footer {
+    margin-top: 42px;
+    padding-top: 18px;
+
+    border-top: 1px solid var(--ev-border);
+
+    text-align: center;
+
+    color: var(--ev-text-muted);
+
+    font-size: 0.74rem;
+}
+
+.ev-footer strong {
+    color: var(--ev-text-secondary);
+}
+
+
+/* ---------- Empty State ---------- */
+
+.ev-empty-state {
+    background: var(--ev-surface);
+
+    border: 1px dashed var(--ev-border);
+
+    border-radius: var(--ev-radius);
+
+    padding: 40px 24px;
+
+    text-align: center;
+}
+
+.ev-empty-title {
+    color: var(--ev-text);
+
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.ev-empty-text {
+    margin-top: 5px;
+
+    color: var(--ev-text-muted);
+
+    font-size: 0.82rem;
+}
+
+
+/* ---------- Loading / Processing ---------- */
+
+.ev-loading {
+    padding: 18px;
+
+    background: var(--ev-surface);
+
+    border: 1px solid var(--ev-border);
+
+    border-radius: 10px;
+
+    color: var(--ev-text-secondary);
+
+    text-align: center;
+}
+
+
+/* ---------- Hide Streamlit Default Multipage Navigation ----------
+   The application will provide its own professional navigation.
+   --------------------------------------------------------------- */
+
+[data-testid="stSidebarNav"] {
+    display: none !important;
+}
+
+
+/* ---------- Hide Unnecessary Streamlit Elements ---------- */
+
+#MainMenu {
+    visibility: hidden;
+}
+
+footer {
+    visibility: hidden;
+}
+
+
+/* ---------- Responsive Layout ---------- */
+
+@media (max-width: 1100px) {
+    .block-container {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+    }
+
+    .ev-hero-title {
+        font-size: 1.7rem;
+    }
+
+    .ev-page-title {
+        font-size: 1.7rem;
+    }
+}
+
+
+@media (max-width: 700px) {
+    .block-container {
+        padding-top: 1rem;
+        padding-bottom: 2rem;
+    }
+
+    .ev-hero {
+        padding: 22px;
+        border-radius: 14px;
+    }
+
+    .ev-hero-title {
+        font-size: 1.45rem;
+    }
+
+    .ev-page-title {
+        font-size: 1.45rem;
+    }
+
+    .ev-kpi-card {
+        padding: 16px;
+    }
+
+    .ev-kpi-value {
+        font-size: 1.4rem;
+    }
+}
+
+
+/* ---------- Accessibility ---------- */
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+    outline: 2px solid var(--ev-primary);
+    outline-offset: 2px;
+}
+
+
+/* ---------- Reduced Motion ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+        animation: none !important;
+    }
+}
